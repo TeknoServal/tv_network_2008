@@ -17,7 +17,7 @@ class NetworkTest < Minitest::Test
 
     nbc = Network.new('NBC')
 
-    assert_instance_of Network, network
+    assert_instance_of Network, nbc
 
     assert_equal 'NBC', nbc.name
     assert_equal [], nbc.shows
