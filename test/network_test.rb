@@ -68,7 +68,7 @@ class NetworkTest < Minitest::Test
     nbc.add_show(knight_rider)
     nbc.add_show(parks_and_rec)
 
-    expected = { parks_and_rec => [leslie_knope, ron_swanson], knight_rider => [michael_knight, kitt] }
+    expected = { knight_rider => ['David Hasselhoff', 'William Daniels'], parks_and_rec => ['Amy Poehler', 'Nick Offerman'] }
 
     assert_equal expected, nbc.actors_by_show
   end
