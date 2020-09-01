@@ -11,10 +11,14 @@ class Show
   end
 
   def total_salary
-    @characters.sum { |char| char.salary }
+    @characters.sum(&:salary)
   end
 
   def highest_paid_actor
     @characters.max_by(&:salary).actor
+  end
+
+  def actors
+    @characters.map(&:actor)
   end
 end
