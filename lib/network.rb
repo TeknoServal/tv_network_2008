@@ -29,4 +29,20 @@ class Network
     end
     show_actors
   end
+
+  def shows_by_actor
+    show_actors = actors_by_show
+    actors_with_show = {}
+
+    show_actors.each do |show, actors|
+      actors.each do |actor|
+        if actors_with_show[actor].nil?
+          actors_with_show[actor] = [show]
+        else
+          actors_with_show[actor] << show
+        end
+      end
+    end
+    actors_with_show
+  end
 end
