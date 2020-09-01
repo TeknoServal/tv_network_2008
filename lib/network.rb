@@ -12,4 +12,12 @@ class Network
   def add_show(show)
     @shows << show
   end
+
+  def main_characters
+    @shows.map do |show|
+      show.characters.select do |char|
+        char if char.name.upcase == char.name && char.salary > 500_000
+      end
+    end.flatten
+  end
 end
