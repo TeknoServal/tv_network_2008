@@ -45,4 +45,11 @@ class Network
     end
     actors_with_show
   end
+
+  def prolific_actors
+    actor_shows = shows_by_actor
+    actor_shows.keys.select do |actor|
+      actor_shows[actor].length > 1
+    end
+  end
 end
